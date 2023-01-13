@@ -2,12 +2,14 @@ import Form from 'components/Form';
 import Links from 'components/Links';
 import './App.scss'
 
+import bgIMG from './img/bg.png';
+
 
 
 function App() {
   return (
     <div style={{
-      backgroundImage: 'url(/img/bg.jpg)',
+      backgroundImage: `url(${bgIMG})`,
       backgroundCover: 'cover',
       height: ' 100vh'
     }}>
