@@ -1,5 +1,7 @@
 import Form from 'components/Form';
 import Links from 'components/Links';
+import Header from 'components/Header';
+
 import './App.scss'
 
 import bgIMG from './img/bg.jpg';
@@ -13,6 +15,7 @@ function App() {
       backgroundCover: 'cover',
       height: ' 100vh'
     }}>
+      <Header />
       <div className='window'>
         <Form />
         <Links />
