@@ -1,5 +1,10 @@
 .links {
     &[data-active="true"] button {
- background-color: red;
-}
+        background-color: red;
+    }
+
+    span>a {
+        text-decoration: none;
+        color: #000
+    }
 }

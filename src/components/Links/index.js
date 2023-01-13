@@ -22,7 +22,7 @@ function Links() {
     const links = useSelector(selectLinks)
     if (!links.length) return null;
     return (
-        <div>
+        <div className='links'>
             {links.map(item => (
                 <AnimatePresence key={item.code}>
                     <motion.div
@@ -30,9 +30,9 @@ function Links() {
                         animate={{ opacity: 1, height: 'auto' }}
                         data-active={copiedLink === item.full_short_link2}
                     >
-                        <span>{item.original_link}</span>
-                        <span>{item.full_short_link2}</span>
-                        <Button onClick={() => copyToClipboard(item.full_short_link2)}>
+                        <span><a href={item.original_link} target="_blank" rel="noreferrer">{item.original_link}</a></span>
+                        <span><a href={item.full_short_link2} target="_blank" rel="noreferrer">{item.full_short_link2}</a></span>
+                        <Button className='button' onClick={() => copyToClipboard(item.full_short_link2)}>
                             {copiedLink === item.full_short_link2 ? 'Copied!' : 'Copy'}
                         </Button>
                     </motion.div>
