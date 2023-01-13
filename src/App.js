@@ -5,6 +5,7 @@ import Header from 'components/Header';
 import './App.scss'
 
 import bgIMG from './img/bg.jpg';
+import logo from './img/logo.png';
 
 
 
@@ -17,8 +18,13 @@ function App() {
     }}>
       <Header />
       <div className='window'>
-        <Form />
-        <Links />
+        <div className='window-content'>
+
+
+          <Form />
+          <img src={logo} alt='logo' />
+          {/* <Links /> */}
+        </div>
       </div>
     </div>
   );

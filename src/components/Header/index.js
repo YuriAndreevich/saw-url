@@ -1,9 +1,11 @@
 import React from 'react'
 import './Header.scss'
 
+import logoSVG from 'img/logo.svg'
+
 function Header() {
     return (
-        <header>Short Link!</header>
+        <header><img src={logoSVG} alt='logo' />Saw url!</header>
     )
 }
 
