@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from 'components/Form';
+import Links from 'components/Links';
+import './App.scss'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      backgroundImage: 'url(/img/bg.jpg)',
+      backgroundCover: 'cover',
+      height: ' 100vh'
+    }}>
+      <div className='window'>
+        <Form />
+        <Links />
+      </div>
     </div>
   );
 }
 
 export default App;
+// qr code
+// https://www.youtube.com/watch?v=8aQekFwbmyE

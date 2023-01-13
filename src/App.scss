@@ -1,0 +1,28 @@
+.window {
+    max-width: 300px;
+    overflow: scroll;
+    max-height: 90vh;
+    overflow-x: hidden;
+
+    //scroll
+    /* width */
+
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: FFCFCB;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FFD763;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #FEAA61;
+}
