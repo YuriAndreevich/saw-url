@@ -1,6 +1,10 @@
 import Form from 'components/Form';
 import Links from 'components/Links';
-import Header from 'components/Header';
+import Header from 'components/Header'
+import { AnimatePresence, motion } from 'framer-motion';
+
+import { useSelector } from 'react-redux';
+
 
 import './App.scss'
 
@@ -10,6 +14,7 @@ import logo from './img/logo.png';
 
 
 function App() {
+  const { isOpen } = useSelector(state => state.modal)
   return (
     <div style={{
       backgroundImage: `url(${bgIMG})`,
@@ -23,9 +28,19 @@ function App() {
 
           <Form />
           <img src={logo} alt='logo' />
-          {/* <Links /> */}
         </div>
       </div>
+      {console.log(isOpen)}
+      {isOpen &&
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}>
+            <Links />
+          </motion.div>
+        </AnimatePresence>}
+
+
     </div>
   );
 }

@@ -1,4 +1,30 @@
 .links {
+    height: 328px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+
+    &-scroll {
+        overflow: scroll;
+        height: 294px;
+
+    }
+
+    &-desc{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-item {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
     &[data-active="true"] button {
         background-color: red;
     }

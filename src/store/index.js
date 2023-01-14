@@ -11,18 +11,24 @@ import {
 } from "redux-persist";
 import storage from 'redux-persist/lib/storage'
 import linkReducer from './slice/linkSlice'
+import modalReducer from './slice/modalSlice'
 
 const persistConfig = {
     key: 'root',
     storage
 }
 
-const rootReducer = combineReducers({ links: linkReducer })
+const rootReducer = combineReducers({
+    links: linkReducer,
+    modal: modalReducer
+})
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-    reducer: persistedReducer,
+    reducer:
+        persistedReducer,
+
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: {
             ignoredActions: [FLUSH,
