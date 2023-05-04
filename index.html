@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    let loader;
+    let textLoader;
+    let loadAnim;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loader = document.querySelector('#loader');
+      textLoader = document.querySelector('.loadingText');
+
+      let countDots = 0;
+
+      loadAnim = setInterval(() => {
+        countDots <= 3 ? countDots++ : countDots = 1; textLoader.innerHTML = 'Загрузка.';
+        for (let i = 1; i < countDots - 1; i++) {
+          textLoader.innerHTML += '.'
+        }
+      }, 300);
+    });
+
+    window.addEventListener('load', () => {
+      loader.style.opacity = 0;
+      root.style.opacity = 1;
+
+      setTimeout(() => {
+        loader.style.display = 'none';
+        clearInterval(loadAnim);
+      }, 500);
+    });
+  </script>
+
+  <div id="loader" scroll="no"
+    style="position: fixed; left: 0;top: 0;z-index: 1000;transition:.5s opacity;width:100vw; height: 100vh; background: rgb(255, 255, 255);font-family: 'Gill Sans', sans-serif;">
+    <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);color:rgb(0, 0, 0);">
+      <!-- <img src="img/logo.png" style="position: absolute; left: 50%; top: 50%; transform: translate(-49%, -50%); will-change: transform;"> -->
+      <span class="loadingText" style="display:block;transform: translateY(75px);text-align: left;">Загрузка...</span>
+    </div>
+  </div>
+</body>
+
+</html>
